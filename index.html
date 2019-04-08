@@ -11,8 +11,21 @@
   <!-- Script demandant un prénom puis affiche "Bonjour, " suivi du prénom saisi. -->
   <!-- Utilisation de la méthode "prompt" afin de faire apparaitre un boite de dialogue avec une invite de saisie de texte -->
   <script>
-    nom  = prompt("Votre prénom :");
-    alert("Bonjour, " +nom+ "!");
+    var ok = false;
+    // On fait les instructions le tant que ce n'est pas bon
+    do
+    {
+      nom  = prompt("Votre prénom :");
+      if (isNaN(nom))
+      {
+        alert("Bonjour, " +nom+ "!");
+        ok = true;
+      }
+      else
+      {
+        alert("Veuillez entrer une chaine de caractère !")
+      }
+    } while (ok == false);
   </script>
 </body>
 </html>
